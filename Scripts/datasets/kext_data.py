@@ -208,7 +208,31 @@ kexts = [
         }
     ),
     KextInfo(
-        name = "Feixiao", 
+        name = "AirPort_RTW88",
+        description = "Realtek PCIe native Wi-Fi (Ventura–Tahoe); no AirDrop",
+        category = "Wi-Fi", min_darwin_version = "22.0.0",
+        max_darwin_version = "25.99.99", allow_force_load = False,
+        conflict_group_id = "RealtekWiFi",
+        github_repo = {"owner": "xnoah222", "repo": "Realtek-AirPort-Family"}
+    ),
+    KextInfo(
+        name = "Realtek88LegacyAirport",
+        description = "Realtek PCIe native Wi-Fi (Mojave–Big Sur)",
+        category = "Wi-Fi", min_darwin_version = "18.0.0",
+        max_darwin_version = "20.99.99", allow_force_load = False,
+        requires_kexts = ["HS80211Family"], conflict_group_id = "RealtekWiFi",
+        github_repo = {"owner": "xnoah222", "repo": "Realtek-AirPort-Family"}
+    ),
+    KextInfo(
+        name = "HS80211Family",
+        description = "High Sierra IO80211 ABI for Realtek88LegacyAirport",
+        category = "Wi-Fi", min_darwin_version = "18.0.0",
+        max_darwin_version = "20.99.99", allow_force_load = False,
+        github_repo = {"owner": "xnoah222", "repo": "Realtek-AirPort-Family"}
+    ),
+    KextInfo(
+        name = "Feixiao",
+        conflict_group_id = "RealtekWiFi",
         description = "Realtek WLAN (rtw88) driver for macOS",
         category = "Wi-Fi",
         min_darwin_version = "20.0.0",
