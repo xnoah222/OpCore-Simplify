@@ -50,7 +50,7 @@ class RealtekAirPortTests(unittest.TestCase):
 
     def test_asset_name_and_pci_ids(self):
         github = Github.__new__(Github)
-        self.assertEqual(github.extract_asset_name('Realtek-AirPort-Family-1.0.1.zip'), 'RealtekAirPortFamily')
+        self.assertEqual(github.extract_asset_name('Realtek-AirPort-Family-1.0.0.zip'), 'RealtekAirPortFamily')
         self.assertEqual(set(pci_data.RealtekAirPortIDs),
                          {'10EC-B822', '10EC-C822', '10EC-C82F', '10EC-C821', '10EC-B821'})
         self.assertTrue(set(pci_data.RealtekAirPortIDs).issubset(pci_data.WirelessCardIDs))
